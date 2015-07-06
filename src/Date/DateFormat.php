@@ -1,13 +1,14 @@
 <?php
 
 /**
- *  Class \Classes\DateFormat
- * @author Johhn O'Grady
+ * Class DateFormat
+ *
+ * @author John O'Grady <natedrake>
+ * @version dev
  * @date 06/07/15
- */
+ **/
 
-namespace Classes;
-
+namespace NateDrake\DateHelper;
 
 class DateFormat
 {

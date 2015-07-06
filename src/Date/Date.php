@@ -1,11 +1,14 @@
 <?php
 
 /**
- *  Class \Classes\Date
- * @author Johhn O'Grady
- * @date 22/06/15
- */
-namespace Classes;
+ * Class Date
+ *
+ * @author John O'Grady <natedrake>
+ * @version dev
+ * @date 06/07/15
+ **/
+
+namespace NateDrake\DateHelper;
 
 class Date
 {
@@ -13,17 +16,6 @@ class Date
      * @var array
      */
     private static $ordinals = array('th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th');
-
-    /**
-     * @method getDifference
-     * @access public
-     * @param $date1
-     * @param $date2
-     */
-    public static function getDifference($date1, $date2)
-    {
-
-    }
 
     /**
      * @method getDifferenceFromNow
