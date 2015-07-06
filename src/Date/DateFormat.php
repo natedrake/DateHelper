@@ -13,7 +13,10 @@ namespace NateDrake\DateHelper;
 class DateFormat
 {
     const EASY = 'l jS \of F Y h:i:s A';
-    
+    const BIG = 'Y-m-d';
+    const LITTLE = 'd-m-Y';
+    const MIDDLE = 'm-d-Y';
+
     private static $instance;
     /**
      * The date string
