@@ -12,6 +12,8 @@ namespace NateDrake\DateHelper;
 
 class DateFormat
 {
+    const EASY = 'l jS \of F Y h:i:s A';
+    
     private static $instance;
     /**
      * The date string
