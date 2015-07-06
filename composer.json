@@ -1,7 +1,7 @@
 {
   "name": "natedrake/datehelper",
   "description": "Date manipulation and output",
-  "minimum-stability": "require-dev",
+  "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
     {
