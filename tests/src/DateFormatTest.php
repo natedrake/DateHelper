@@ -20,7 +20,7 @@ class DateFormatTest extends \PHPUnit_Framework_TestCase
     public function testBigFormatReturnsYearFirst()
     {
         $result = DateFormat::get()->date('01-01-2001')->format(DateFormat::BIG)->run();
-        $this->assertEquals('2001-01-01', $result);
+        $this->assertEquals('2001-01-01 00:00:00', $result);
     }
 
     public function testEpochReturnsTypeInt()

@@ -14,9 +14,10 @@ class DateFormat
 {
     #region const
     const EASY = 'l jS \of F Y h:i:s A';
-    const BIG = 'Y-m-d';
-    const LITTLE = 'd-m-Y';
-    const MIDDLE = 'm-d-Y';
+    const BIG = 'Y-m-d H:i:s';
+    const LITTLE = 'd-m-Y H:i:s';
+    const MIDDLE = 'm-d-Y H:i:s';
+    const SHORT = 'D, d M y H:i:s';
     #endregion
 
     #region Private Variables
@@ -90,6 +91,6 @@ class DateFormat
     public static function epochDate($epoch)
     {
         $date = new \DateTime(date('r', $epoch));
-        return $date->format(static::EASY);
+        return $date->format(static::SHORT);
     }
 }
