@@ -15,9 +15,18 @@ require_once dirname(dirname(__DIR__)) . '/vendor/autoload.php';
 class DateTest extends \PHPUnit_Framework_TestCase
 {
     /**
+     * @method testGetDifferenceFromNow
+     */
+    public function testGetDifferenceFromNowReturnTypeIsString()
+    {
+        $result = new \DateTime('1970-01-01');
+        $this->assertInternalType('string', Date::getDifferenceFromNow($result->format('Y-d-m H:i:s')));
+    }
+
+    /**
      * @method testOrdinalNumbersReturnCorrectOrdinal
      */
-    public function testOrdinalNumbersReturnCorrectOrdinal()
+    public function testOrdinalNumbersReturnCorrectOrdinalAndType()
     {
         $expected = array(
             "1st" => 1,
@@ -41,5 +50,14 @@ class DateTest extends \PHPUnit_Framework_TestCase
     {
         $result = Date::getOrdinal(6);
         $this->assertEquals('6th', $result);
+    }
+
+    /**
+     * @method testGetOrdinalLetter
+     */
+    public function testGetOrdinalReturnsFalseWhenSupplyingLetters()
+    {
+        $result = Date::getOrdinal('a');
+        $this->assertFalse($result);
     }
 }
