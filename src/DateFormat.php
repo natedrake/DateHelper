@@ -4,7 +4,7 @@
  * Class DateFormat
  *
  * @author John O'Grady <natedrake>
- * @version dev
+ * @version 0.1
  * @date 06/07/15
  **/
 
