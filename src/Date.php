@@ -4,7 +4,7 @@
  * Class Date
  *
  * @author John O'Grady <natedrake>
- * @version dev
+ * @version 0.1
  * @date 06/07/15
  **/
 
@@ -79,11 +79,14 @@ class Date
      */
     public static function getOrdinal($num)
     {
+        if (!(preg_match('/[^\d]/', $num))) {
+            $num = (int)$num;
+        }
         if (is_int($num)) {
             if ((($num % 100) >= 11) && (($num % 100) <= 13)) {
-                return 'th';
+                return $num . 'th';
             } else {
-                return self::$ordinals[$num % 10];
+                return $num . self::$ordinals[$num % 10];
             }
         } else {
             return false;
