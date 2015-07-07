@@ -89,6 +89,7 @@ class DateFormat
      */
     public static function epochDate($epoch)
     {
-        return date('r', $epoch);
+        $date = new \DateTime(date('r', $epoch));
+        return $date->format(static::EASY);
     }
 }
