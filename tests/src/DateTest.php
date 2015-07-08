@@ -20,7 +20,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
     public function testGetDifferenceFromNowReturnTypeIsString()
     {
         $result = new \DateTime('1970-01-01');
-        $this->assertInternalType('string', Date::getDifferenceFromNow($result->format('Y-d-m H:i:s')));
+        $this->assertInternalType('string', Date::get()->getDifferenceFromNow($result->format('Y-d-m H:i:s')));
     }
 
     /**
@@ -37,7 +37,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
             "101st" => 101
         );
         foreach ($expected as $exp => $val) {
-            $result = Date::getOrdinal($val);
+            $result = Date::get()->getOrdinal($val);
             $this->assertEquals($exp, $result, $val);
             $this->assertInternalType('string', $result);
         }
@@ -48,7 +48,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetOrdinalReturnsCorrectOrdinal()
     {
-        $result = Date::getOrdinal(6);
+        $result = Date::get()->getOrdinal(6);
         $this->assertEquals('6th', $result);
     }
 
@@ -57,7 +57,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetOrdinalReturnsFalseWhenSupplyingLetters()
     {
-        $result = Date::getOrdinal('a');
+        $result = Date::get()->getOrdinal('a');
         $this->assertFalse($result);
     }
 }
