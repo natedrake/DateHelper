@@ -86,11 +86,16 @@ class DateFormat
 
     /**
      * @param int $epoch
+     * @param string $type
      * @return bool|string
      */
-    public static function epochDate($epoch)
+    public static function epochDate($epoch, $type = null)
     {
         $date = new \DateTime(date('r', $epoch));
-        return $date->format(static::SHORT);
+        if (!$type){
+            return $date->format(static::SHORT);
+        } else {
+            return $date->format($type);
+        }
     }
 }
