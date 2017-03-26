@@ -41,24 +41,24 @@ E.g. 10 seconds ago, less than a minute ago, a week ago, 3 weeks ago, a fortnigh
 
 ##### Usage:
 ````php
-$ordinal=Date::get()-><function>([parameter]);
+$ordinal=Date::<function>([parameter]);
 ````
 
 ##### Example:
 ````php
-$ordinal=Date::get()->ordinal(12);
+$ordinal=Date::ordinal(12);
 ````
 > returns '12th'
 
 ##### Methods:
 
 ````php
-Date::get()->differenceFromNow($date);
+Date::differenceFromNow($date);
 ````
 > returns the difference since the provided date.  E.g 10 seconds ago, a week ago, a fortnight, ago, 3 weeks ago, etc
 
 ````php
-Date::get()->getOrdinal($number);
+Date::ordinal($number);
 ````
 >returns the ordinal for the number provided.  E.g. 1st, 10th, 3rd, etc.
 
