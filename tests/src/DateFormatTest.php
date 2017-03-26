@@ -1,21 +1,27 @@
 <?php
 
 /**
- *  Class DateTest
- *  @extends PHPUnit_Framework_TestCase
- *
- *  @author John P O'Grady <natedrake>
+ *  @author John O'Grady <natedrake>
  *  @date 07-07-15
  **/
 
 use NateDrake\DateHelper\DateFormat;
 
-require_once dirname(dirname(__DIR__)) . '/vendor/autoload.php';
-
+/**
+ * Class DateFormatTest
+ */
 class DateFormatTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @method testBigFormatReturnsYearFirst
+     *  @return void
+     */
+    public function testDateFormat()
+    {
+        $result=DateFormat::get()->date('2001-01-01 00:10:01')->format(DateFormat::ISO8601)->run();
+        $this->assertEquals('2001-01-01T00:10:01+01:00', $result);
+    }
+    /**
+     *  @return void
      */
     public function testBigFormatReturnsYearFirst()
     {
@@ -23,9 +29,23 @@ class DateFormatTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('2001-01-01 00:00:00', $result);
     }
 
+    /**
+     *  @return void
+     */
     public function testEpochReturnsTypeInt()
     {
         $result = DateFormat::epoch();
         $this->assertInternalType('int', $result);
+    }
+
+    /**
+     *  @return void
+     */
+    public function testEpochOnDate()
+    {
+        $iPast=(int)DateFormat::get()->date('2015-05-07 10:21:00')->format(DateFormat::EPOCH)->run();
+        $iNow=(int)DateFormat::epoch();
+        $result=($iNow-$iPast);
+        $this->assertGreaterThan(0, $result);
     }
 }
