@@ -69,12 +69,13 @@ class DateFormat
 
     /**
      * @param $format
-     * @return $this
+     * @return string
      */
     public function format($format)
     {
         $this->format = $format;
-        return $this;
+        $date = new \DateTime($this->date);
+        return $date->format($this->format);
     }
 
     /**
@@ -84,15 +85,6 @@ class DateFormat
     {
         $date=new \DateTime($this->date);
         return $date->format(self::LEAP);
-    }
-
-    /**
-     * @return string
-     */
-    public function run()
-    {
-        $date = new \DateTime($this->date);
-        return $date->format($this->format);
     }
 
     /**
