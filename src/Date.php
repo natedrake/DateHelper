@@ -83,7 +83,7 @@ class Date
             if ((($num % 100) >= 11) && (($num % 100) <= 13)) {
                 return 'th';
             } else {
-                return self::$ordinals[$num % 10];
+                return (int)$num.self::$ordinals[$num % 10];
             }
         } else {
             return false;
