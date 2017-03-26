@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="vendor/autoload.php" colors="true">
+<phpunit bootstrap="./vendor/autoload.php" colors="true">
     <testsuites>
         <testsuite name="DateHelper">
-            <directory>test</directory>
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whilelist processUncoveredFilesFromWhiteLists="true">
+            <directory suffix=".php">src</directory>
+        </whilelist>
+    </filter>
 </phpunit>
