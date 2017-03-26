@@ -10,8 +10,6 @@
 
 use NateDrake\DateHelper\Date;
 
-require_once dirname(dirname(__DIR__)) . '/vendor/autoload.php';
-
 class DateTest extends \PHPUnit_Framework_TestCase
 {
     /**
@@ -20,7 +18,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
     public function testGetDifferenceFromNowReturnTypeIsString()
     {
         $result = new \DateTime('1970-01-01');
-        $this->assertInternalType('string', Date::get()->getDifferenceFromNow($result->format('Y-d-m H:i:s')));
+        $this->assertInternalType('string', Date::differenceFromNow($result->format('Y-d-m H:i:s')));
     }
 
     /**
@@ -37,7 +35,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
             "101st" => 101
         );
         foreach ($expected as $exp => $val) {
-            $result = Date::get()->getOrdinal($val);
+            $result = Date::ordinal($val);
             $this->assertEquals($exp, $result, $val);
             $this->assertInternalType('string', $result);
         }
@@ -48,7 +46,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetOrdinalReturnsCorrectOrdinal()
     {
-        $result = Date::get()->getOrdinal(6);
+        $result = Date::ordinal(6);
         $this->assertEquals('6th', $result);
     }
 
@@ -57,7 +55,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetOrdinalReturnsFalseWhenSupplyingLetters()
     {
-        $result = Date::get()->getOrdinal('a');
+        $result = Date::ordinal('a');
         $this->assertFalse($result);
     }
 }
