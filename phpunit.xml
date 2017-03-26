@@ -6,8 +6,8 @@
         </testsuite>
     </testsuites>
     <filter>
-        <whilelist processUncoveredFilesFromWhiteLists="true">
+        <whitelist processUncoveredFilesFromWhiteLists="true">
             <directory suffix=".php">src</directory>
-        </whilelist>
+        </whitelist>
     </filter>
 </phpunit>
