@@ -17,7 +17,7 @@ class DateFormatTest extends \PHPUnit_Framework_TestCase
      */
     public function testDateFormat()
     {
-        $result=DateFormat::get()->date('2001-01-01 00:10:01')->format(DateFormat::ISO8601)->run();
+        $result=DateFormat::get()->date('2001-01-01 00:10:01')->format(DateFormat::ISO8601);
         $this->assertEquals('2001-01-01T00:10:01+01:00', $result);
     }
     /**
@@ -25,7 +25,7 @@ class DateFormatTest extends \PHPUnit_Framework_TestCase
      */
     public function testBigFormatReturnsYearFirst()
     {
-        $result = DateFormat::get()->date('01-01-2001')->format(DateFormat::BIG)->run();
+        $result = DateFormat::get()->date('01-01-2001')->format(DateFormat::BIG);
         $this->assertEquals('2001-01-01 00:00:00', $result);
     }
 
@@ -43,7 +43,7 @@ class DateFormatTest extends \PHPUnit_Framework_TestCase
      */
     public function testEpochOnDate()
     {
-        $iPast=(int)DateFormat::get()->date('2015-05-07 10:21:00')->format(DateFormat::EPOCH)->run();
+        $iPast=(int)DateFormat::get()->date('2015-05-07 10:21:00')->format(DateFormat::EPOCH);
         $iNow=(int)DateFormat::epoch();
         $result=($iNow-$iPast);
         $this->assertGreaterThan(0, $result);
