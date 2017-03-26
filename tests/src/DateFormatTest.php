@@ -3,7 +3,7 @@
 /**
  *  @author John O'Grady <natedrake>
  *  @date 07-07-15
- **/
+ */
 
 use NateDrake\DateHelper\DateFormat;
 
@@ -17,8 +17,9 @@ class DateFormatTest extends \PHPUnit_Framework_TestCase
      */
     public function testDateFormat()
     {
-        $result=DateFormat::get()->date('2001-01-01 00:10:01')->format(DateFormat::ISO8601);
-        $this->assertEquals('2001-01-01T00:10:01+01:00', $result);
+        $result=DateFormat::get()->date('2001-01-01 00:10:01')->format(DateFormat::BIG);
+        echo $result;
+        $this->assertEquals('2001-01-01 00:10:01', $result);
     }
     /**
      *  @return void

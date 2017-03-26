@@ -1,7 +1,7 @@
 <?php
 /**
  * @author John O'Grady <natedrake>
- * @version 0.1.5
+ * @version 1.0.0
  * @date 06/07/15
  */
 

@@ -1,12 +1,9 @@
 <?php
 
 /**
- *  Class DateTest
- *  @extends PHPUnit_Framework_TestCase
- *
  *  @author John P O'Grady <natedrake>
  *  @date 07-07-15
- **/
+ */
 
 use NateDrake\DateHelper\Date;
 
